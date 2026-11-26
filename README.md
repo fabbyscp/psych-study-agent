@@ -1,10 +1,10 @@
 # MindStudy Agent API
 
-🇧🇷 [Português](#-português) | 🇺🇸 [English](#-english)
+[Português](#português) | [English](#english)
 
 ---
 
-## 🇧🇷 Português
+## Português
 
 API REST de um **Agente de IA com Orquestração e Tool Calling** construída com **FastAPI**, **Google GenAI SDK** e **SQLite** para organização acadêmica e agendamento automático de revisões espaçadas em Psicologia.
 

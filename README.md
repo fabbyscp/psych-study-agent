@@ -33,6 +33,43 @@ psych-study-agent/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
+
+### Como Executar Localmente
+
+1. Clone o repositório e acesse a pasta:
+   ```bash
+   git clone [https://github.com/fabbyscp/psych-study-agent.git](https://github.com/fabbyscp/psych-study-agent.git)
+   cd psych-study-agent
+   ```
+
+2. Crie e ative o ambiente virtual:
+   ```bash
+   python -m venv venv
+   # Windows PowerShell:
+   .\venv\Scripts\activate
+   ```
+
+3. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Configure as variáveis de ambiente:
+   ```bash
+   copy .env.example .env
+   # Insira sua GEMINI_API_KEY no arquivo .env
+   ```
+
+5. Inicie a API e acesse o Swagger em `http://127.0.0.1:8000/docs`:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+
+6. Execute os testes automatizados:
+   ```bash
+   pytest -v
+   ```
 
 ---
 
@@ -48,19 +85,57 @@ REST API for an **AI Agent with Orchestration and Tool Calling** built with **Fa
 
 ### Project Structure
 
-- `app/agent.py`: Gemini agent orchestration with Tool Calling and fallback
-- `app/config.py`: Configuration via Pydantic Settings (`.env`)
-- `app/database.py`: SQLite connection and schema initialization
-- `app/main.py`: FastAPI endpoints and lifespan management
-- `app/schemas.py`: Pydantic request/response schemas
-- `app/tools.py`: Python tools executed by the agent
-- `tests/test_agent_and_tools.py`: Automated tests with Pytest
+```text
+psych-study-agent/
+├── app/
+│   ├── __init__.py
+│   ├── agent.py       # Gemini agent orchestration with Tool Calling and fallback
+│   ├── config.py      # Configuration via Pydantic Settings (.env)
+│   ├── database.py    # SQLite connection and schema initialization
+│   ├── main.py        # FastAPI endpoints and lifespan management
+│   ├── schemas.py     # Pydantic request/response schemas
+│   └── tools.py       # Python tools executed by the agent
+├── tests/
+│   ├── __init__.py
+│   └── test_agent_and_tools.py
+├── .env.example
+├── .gitignore
+├── requirements.txt
+└── README.md
+```
 
 ### Running Locally
 
-1. Clone the repository: `git clone https://github.com/fabbyscp/psych-study-agent.git && cd psych-study-agent`
-2. Create and activate the virtual environment: `python -m venv venv` and `.\venv\Scripts\activate`
-3. Install dependencies: `pip install -r requirements.txt`
-4. Copy `.env.example` to `.env` and add your `GEMINI_API_KEY`
-5. Start the API: `uvicorn app.main:app --reload` (Swagger UI at `http://127.0.0.1:8000/docs`)
-6. Run tests: `pytest -v`
+1. Clone the repository and enter the directory:
+   ```bash
+   git clone [https://github.com/fabbyscp/psych-study-agent.git](https://github.com/fabbyscp/psych-study-agent.git)
+   cd psych-study-agent
+   ```
+
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   # Windows PowerShell:
+   .\venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Configure environment variables:
+   ```bash
+   copy .env.example .env
+   # Add your GEMINI_API_KEY to the .env file
+   ```
+
+5. Start the API and open Swagger UI at `http://127.0.0.1:8000/docs`:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+
+6. Run automated tests:
+   ```bash
+   pytest -v
+   ```
